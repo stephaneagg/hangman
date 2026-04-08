@@ -1,0 +1,12 @@
+
+
+Image needed for this app:
+
+    - 6 images to convey lives lost (every image the cat wake up more and more)
+        - cat completely asleep
+        ...
+        - cat with eyes open
+    
+    - image when game is lost. maybe the cat chasing the mouse
+    - image when the game is won. mouse eating cheese
+    - image(s) when starting the game. mouse wishing he had cheese
