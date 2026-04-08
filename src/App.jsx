@@ -2,12 +2,12 @@
 import Status from "./Status.jsx"
 import Lives from "./Lives.jsx"
 import Word from "./Word.jsx"
+import Keyboard from "./Keyboard.jsx"
 import { useState } from "react"
 export default function App() {
 
 
   const [word, setWord] = useState("react")
-  const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 /**
  * Goal: Build out the main parts of our app
@@ -29,7 +29,8 @@ export default function App() {
         <Status />
         <Lives />
         <Word word={word}/>
-
+        <Keyboard />
+        <button className="game-button">New Game</button>
     </main>
   )
 }
