@@ -28,7 +28,7 @@ export default function App() {
 
 
         <Status />
-        <Lives />
+        <Lives word={word} guessed={guessed}/>
         <Word word={word} guessed={guessed}/>
         <Keyboard word={word} guessed={guessed} guessLetter={guessLetter}/>
         <button className="game-button">New Game</button>
