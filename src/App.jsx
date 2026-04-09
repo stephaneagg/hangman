@@ -11,6 +11,13 @@ export default function App() {
   const [guessed, setGuessed] = useState([])
 
 
+  // the number of letters in guessed that are not in word
+  const wrongGuessCount = guessed.filter(
+      letter => !word.includes(letter)
+  ).length
+
+  const isGameOver = wrongGuessCount >= 6 ? true : false
+
   function guessLetter(letter) {
     setGuessed( (prev) => 
       prev.includes(letter) ?
@@ -28,10 +35,10 @@ export default function App() {
 
 
         <Status />
-        <Lives word={word} guessed={guessed}/>
+        <Lives wrongGuessCount={wrongGuessCount}/>
         <Word word={word} guessed={guessed}/>
         <Keyboard word={word} guessed={guessed} guessLetter={guessLetter}/>
-        <button className="game-button">New Game</button>
+        {isGameOver ? <button className="game-button">New Game</button> : null }
     </main>
   )
 }
