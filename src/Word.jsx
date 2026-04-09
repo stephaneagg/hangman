@@ -9,10 +9,12 @@ export default function Word(props) {
     function displayLetters() {
         let letterArr = props.word.split("")
         return letterArr.map( (letter, index) =>  {
+            const isGuessed = props.guessed.includes(letter)
+            const isCorrect = props.guessed.includes(letter) && props.word.split("").includes(letter)
             return <span 
                 key={index} 
                 className="letter">
-                    {letter.toUpperCase()}
+                    {isGuessed && isCorrect ? letter.toUpperCase() : ""}
                </span>} )
     }
 

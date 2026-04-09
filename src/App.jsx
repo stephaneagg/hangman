@@ -9,7 +9,7 @@ export default function App() {
 
   const [word, setWord] = useState("react")
   const [guessed, setGuessed] = useState([])
-  
+
 
   function guessLetter(letter) {
     setGuessed( (prev) => 
@@ -29,7 +29,7 @@ export default function App() {
 
         <Status />
         <Lives />
-        <Word word={word}/>
+        <Word word={word} guessed={guessed}/>
         <Keyboard word={word} guessed={guessed} guessLetter={guessLetter}/>
         <button className="game-button">New Game</button>
     </main>
