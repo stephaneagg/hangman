@@ -104,6 +104,14 @@ header > p {
   cursor: pointer;
 }
 
+button.correct {
+    background-color: #10A95B;
+}
+
+button.wrong {
+    background-color: #EC5D49;
+}
+
 .game-button {
   height: 40px;
   width: 228px;

@@ -9,19 +9,7 @@ export default function App() {
 
   const [word, setWord] = useState("react")
   const [guessed, setGuessed] = useState([])
-
-/**
- * Goal: Allow the user to start guessing the letters
- * 
- * Challenge: Create a new array in state to hold user's
- * guessed letters. When the user chooses a letter, add
- * that letter to this state array.
- * 
- * Don't worry about whether it was a right or wrong 
- * guess yet.
- */
-
-
+  
 
   function guessLetter(letter) {
     setGuessed( (prev) => 
@@ -30,8 +18,6 @@ export default function App() {
       [...prev, letter]
     )
   }
-
-  console.log(guessed)
 
   return (
     <main>
@@ -44,7 +30,7 @@ export default function App() {
         <Status />
         <Lives />
         <Word word={word}/>
-        <Keyboard guessLetter={guessLetter}/>
+        <Keyboard word={word} guessed={guessed} guessLetter={guessLetter}/>
         <button className="game-button">New Game</button>
     </main>
   )
