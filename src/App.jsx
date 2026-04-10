@@ -4,10 +4,11 @@ import Lives from "./Lives.jsx"
 import Word from "./Word.jsx"
 import Keyboard from "./Keyboard.jsx"
 import { useState } from "react"
+import { words } from "../resources/words.js"
 export default function App() {
 
 
-  const [word, setWord] = useState("react")
+  const [word, setWord] = useState(getWord())
   const [guessed, setGuessed] = useState([])
 
 
@@ -26,6 +27,11 @@ export default function App() {
       prev : 
       [...prev, letter]
     )
+  }
+
+  function getWord() {
+    const rand = Math.floor(Math.random() * (words.length-1))
+    return words[rand]
   }
 
   return (
