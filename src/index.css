@@ -87,7 +87,7 @@ header > p {
 }
 
 
-.letter {
+.word span {
   height: 40px;
   width: 40px;
   display: flex;
@@ -95,7 +95,11 @@ header > p {
   align-items: center;
   background-color: #323232;
   border-bottom: 1px solid #F9F4DA;
-} 
+}
+
+.missed-letter {
+  color: red
+}
 
 .keyboard {
   margin: 15px;
