@@ -34,6 +34,11 @@ export default function App() {
     return words[rand]
   }
 
+  function resetGame() {
+    setWord(getWord())
+    setGuessed([])
+  }
+
   return (
     <main>
       <header>
@@ -46,7 +51,7 @@ export default function App() {
       <Lives wrongGuessCount={wrongGuessCount}/>
       <Word word={word} guessed={guessed}/>
       <Keyboard word={word} guessed={guessed} guessLetter={guessLetter} isGameOver={isGameOver}/>
-      {isGameOver ? <button className="game-button">New Game</button> : null }
+      {isGameOver ? <button className="game-button" onClick={resetGame}>New Game</button> : null }
     </main>
   )
 }
