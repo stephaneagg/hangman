@@ -11,6 +11,11 @@ export default function App() {
   const [word, setWord] = useState(getWord())
   const [guessed, setGuessed] = useState([])
 
+  /**
+   * Things to add
+   * - display different immages based on the game state. won/lost + intermediary 
+   */
+
 
   // the number of letters in guessed that are not in word
   const wrongGuessCount = guessed.filter(
@@ -47,7 +52,7 @@ export default function App() {
       </header>
 
 
-      <Status isGameWon={isGameWon} isGameLost={isGameLost} isGameOver={isGameOver}/>
+      <Status isGameWon={isGameWon} isGameLost={isGameLost} isGameOver={isGameOver} wrongGuessCount={wrongGuessCount}/>
       <Lives wrongGuessCount={wrongGuessCount}/>
       <Word word={word} guessed={guessed} isGameOver={isGameOver}/>
       <Keyboard word={word} guessed={guessed} guessLetter={guessLetter} isGameOver={isGameOver}/>

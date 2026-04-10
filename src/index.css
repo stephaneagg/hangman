@@ -57,6 +57,10 @@ header > p {
   background-color: #BA2A2A;
 }
 
+.game-status.playing {
+  background-color: #8E8E8E;
+}
+
 .game-status p {
     margin: 5px;
 }
@@ -98,7 +102,7 @@ header > p {
 }
 
 .missed-letter {
-  color: red
+  color: #EC5D49;
 }
 
 .keyboard {
