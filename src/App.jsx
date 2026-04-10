@@ -39,7 +39,7 @@ export default function App() {
       <Status isGameWon={isGameWon} isGameLost={isGameLost} isGameOver={isGameOver}/>
       <Lives wrongGuessCount={wrongGuessCount}/>
       <Word word={word} guessed={guessed}/>
-      <Keyboard word={word} guessed={guessed} guessLetter={guessLetter}/>
+      <Keyboard word={word} guessed={guessed} guessLetter={guessLetter} isGameOver={isGameOver}/>
       {isGameOver ? <button className="game-button">New Game</button> : null }
     </main>
   )
