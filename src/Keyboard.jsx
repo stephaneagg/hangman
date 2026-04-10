@@ -14,7 +14,6 @@ export default function Keyboard(props) {
                     correct: isCorrect,
                     wrong: isWrong
                 })
-                console.log(className)
 
                 return <button className={className} 
                             key={index} 

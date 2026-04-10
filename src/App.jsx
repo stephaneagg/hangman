@@ -16,7 +16,9 @@ export default function App() {
       letter => !word.includes(letter)
   ).length
 
-  const isGameOver = wrongGuessCount >= 6 ? true : false
+  const isGameWon = word.split("").every( (letter) => guessed.includes(letter))
+  const isGameLost = wrongGuessCount >= 6
+  const isGameOver = isGameWon || isGameLost
 
   function guessLetter(letter) {
     setGuessed( (prev) => 
@@ -34,11 +36,11 @@ export default function App() {
       </header>
 
 
-        <Status />
-        <Lives wrongGuessCount={wrongGuessCount}/>
-        <Word word={word} guessed={guessed}/>
-        <Keyboard word={word} guessed={guessed} guessLetter={guessLetter}/>
-        {isGameOver ? <button className="game-button">New Game</button> : null }
+      <Status isGameWon={isGameWon} isGameLost={isGameLost} isGameOver={isGameOver}/>
+      <Lives wrongGuessCount={wrongGuessCount}/>
+      <Word word={word} guessed={guessed}/>
+      <Keyboard word={word} guessed={guessed} guessLetter={guessLetter}/>
+      {isGameOver ? <button className="game-button">New Game</button> : null }
     </main>
   )
 }
